@@ -4,6 +4,7 @@
   "description": "Backend server for cork board image app",
   "main": "server.js",
   "scripts": {
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
     "start": "npm run build && node dist/index.js",
     "dev start": "nodemon ./server.js --exec babel-node -e js",
     "test": "echo \"Error: no test specified\" && exit 1"
