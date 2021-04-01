@@ -4,8 +4,10 @@
   "description": "Backend server for cork board image app",
   "main": "server.js",
   "scripts": {
-    "start": "npm run build && node dist/index.js",
-    "dev start": "nodemon ./server.js --exec babel-node -e js",
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel -d ./build ./src -s",
+    "build": "npm run clean && npm run build-babel",
+    "start": "npm run build && node ./build/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Cam Evans",
@@ -26,6 +28,5 @@
   },
   "engines": {
     "node": "14.x"
-  },
-  "heroku-run-build-script": true
+  }
 }
