@@ -4,8 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./server.js --exec babel-node -e js"
+    "devstart": "nodemon ./server.js --exec babel-node -e js",
+    "build": "babel -d ./build ./server",
+    "prebuild": "rm -rf build/*",
+    "start": "NODE_ENV=production node ./build/server.js",
+    "prestart": "npm build"
   },
   "author": "",
   "license": "ISC",
