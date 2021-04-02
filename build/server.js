@@ -43,6 +43,6 @@ app.use(_express2.default.json());
 
 (0, _imgRoutes2.default)(app);
 
-app.listen(PORT, function () {
+app.listen(process.env.PORT || PORT, function () {
   return console.log('Server is running on port ' + PORT);
 });

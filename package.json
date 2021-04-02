@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "devstart": "nodemon ./server.js --exec babel-node -e js",
+    "devstart": "nodemon ./server/server.js --exec babel-node -e js",
     "build": "babel -d ./build ./server",
     "prebuild": "rm -rf build/*",
     "start": "NODE_ENV=production node ./build/server.js",
